@@ -1,14 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Helicopter Game</title>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Helicopter Game</title>
-    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            padding-top: 150px; /* Add padding to move the content lower */
+            background-color: #000;
+            color: #fff;
+            font-family: Arial, sans-serif;
+        }
+        #game {
+            border: 2px solid #fff;
+            margin-bottom: 20px;
+        }
+        .introduction {
+            max-width: 800px;
+            text-align: center;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+        }
+        .introduction h1 {
+            margin-top: 0;
+        }
+        .introduction p {
+            text-align: justify;
+        }
+    </style>
 </head>
-
 <body>
-    <canvas width="800" height="550" id="game"></canvas>
+    <canvas id="game" width="800" height="600"></canvas>
+    <div class="introduction">
+        <h1>Welcome to the Helicopter Game!</h1>
+        <p>This helicopter game was developed using Javascript. I explored 2 different approaches: Phaser.js, and pure Javascript with HTML5. I was able to understand the benefits and trade offs of using a game development framework vs coding everything from scratch.</p>
+        <p>I chose to make this helicopter game because it was one of my favourite childhood games in the 2000s. This type of game is addicting due to its physical based movement and obstacle avoidance. However the physics, gravity, acceleration, collision detection, and score tracking are what should be taken into considerations when designing and coding. Building this game by following an existing tutorial was fun and valuable.</p>
+        <p>I finalized the game using pure JavaScript and the HTML5 Canvas, without using an external framework (Phaser.js), because using Phaser.js could not achieve the same kind of physics as the original helicopter game. I actually find it more fun creating from scratch and following tutorials, due to the fact that it has better flexibility where it gives me full control over the game mechanics. Unlike Phaser.js, where movement and physics are built in, and it simplified the implementation of gravity and acceleration. This is the main reason I decided not to use Phaser.js, because it just could not achieve the type of acceleration of a helicopter I wanted(When user pressing spacebar). I had to manually code physics, collision detection, and user input for controlling helicopters. Though it was time consuming, by following the tutorial, I was able to precisely adjust the movement of the helicopter, manage the obstacles, and create the tunnel(walls). And in Phaser.js, these would be automated with limited customization.</p>
+        <p>In the future, I could integrate sound effects, more animations (when collision happens), moving obstacles, or gradually increase the difficulty option. And to make things easier, I could use Howler.js for sound effects, and Lodash for utility functions.</p>
+    </div>
     <script src="script.js"></script>
 </body>
 </html>

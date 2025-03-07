@@ -235,12 +235,14 @@ function loop() {
 
 document.addEventListener('keydown', function (e) {
     if (e.key === ' ') { // Corrected 'Space' to ' '
+        e.preventDefault(); // Prevent the default action (scrolling)
         spacePressed = true; // Corrected false to true
     }
     if (e.key === 'Enter' && gameOver) {
         resetGame();
     }
 });
+
 document.addEventListener('keyup', function (e) { // Added keyup event listener
     if (e.key === ' ') {
         spacePressed = false;
